@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./pages/index.css">
+        <title>Место</title>
+    </head>
+    <body class="root">
+        <div class="page">
+            <header class="header">
+                <img src="./images/logo.svg" alt="Лого заголовка" class="header__logo">
+            </header>
+
+            <main class="content">
+                <section class="profile">
+                    <img src="./images/image.svg" alt="Аватар" class="profile__avatar">
+                    <div class="profile__info">
+                        <div class="profile__list">
+                            <h1 class="profile__title">Жак-Ив Кусто</h1>
+                            <button class="profile__button-edit profile__button-edit_popup_opened" type="button" title="Редактировать профиль"></button>
+                        </div>
+                        <h2 class="profile__subtitle">Исследователь&nbsp;океана</h2>
+                    </div>
+                    <button class="profile__button-add" type="button" title="Добавить фото"></button>
+                </section>
+
+                <section class="elements">
+                    <div class="elements__item">
+                        <img src="./images/Dombay.jpg" class="elements__image" alt="Домбай">
+                        <div class="elements__info">
+                            <h2 class="elements__title">Домбай</h2>
+                            <button type="button" class="elements__like" aria-label="Like"></button>
+                        </div>
+                    </div>
+                    <div class="elements__item">
+                        <img src="./images/Karachaevsk.jpg" class="elements__image" alt="Карачаевск">
+                        <div class="elements__info">
+                            <h2 class="elements__title">Карачаевск</h2>
+                            <button type="button" class="elements__like" aria-label="Like"></button>
+                        </div>
+                    </div>
+                    <div class="elements__item">
+                        <img src="./images/Gora Elbrus.jpg" class="elements__image" alt="Гора Эльбрус">
+                        <div class="elements__info">
+                            <h2 class="elements__title">Гора Эльбрус</h2>
+                            <button type="button" class="elements__like" aria-label="Like"></button>
+                        </div>
+                    </div>
+                    <div class="elements__item">
+                        <img src="./images/Dombay.jpg" class="elements__image" alt="Домбай">
+                        <div class="elements__info">
+                            <h2 class="elements__title">Домбай</h2>
+                            <button type="button" class="elements__like" aria-label="Like"></button>
+                        </div>
+                    </div>
+                    <div class="elements__item">
+                        <img src="./images/Karachaevsk.jpg" class="elements__image" alt="Карачаевск">
+                        <div class="elements__info">
+                            <h2 class="elements__title">Карачаевск</h2>
+                            <button type="button" class="elements__like" aria-label="Like"></button>
+                        </div>
+                    </div>
+                    <div class="elements__item">
+                        <img src="./images/Gora Elbrus.jpg" class="elements__image" alt="Гора Эльбрус">
+                        <div class="elements__info">
+                            <h2 class="elements__title">Гора Эльбрус</h2>
+                            <button type="button" class="elements__like" aria-label="Like"></button>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="footer">
+                <p class="footer__copyright">&copy; 2023&nbsp;Mesto&nbsp;Russia</p>
+            </footer>
+        </div>
+
+        <div class="popup popup_opened">
+            <div class="popup__container">
+                <button class="popup__close-button" type="button" title="Закрыть"></button>
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <fieldset class="popup__set">
+                    <input class="popup__input" id="username" type="text" name="name" placeholder="Имя" minlength="2" maxlength="40" required />
+                    <input class="popup__input" id="Userinformation" type="text" name="about" placeholder="О себе" minlength="2" maxlength="200" required />
+                </fieldset>
+                <button class="popup__save-button" type="submit" title="Сохранить">Сохранить</button>
+            </div>
+        </div>
+
+        <script src="./scripts/index.js"></script>
+    </body>
+</html>
