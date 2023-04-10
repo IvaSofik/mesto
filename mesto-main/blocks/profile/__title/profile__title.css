@@ -13,17 +13,18 @@
     overflow: hidden;
 }
 
-@media screen and (max-width: 925px) {
+@media screen and (max-width: 730px) {
     .profile__title {
-      font-size: 29px;
-      line-height: 36px;
+      margin: 0 10px 0 30px;
+      font-size: 27px;
+      line-height: 33px;
       max-width: 205px;
     }
   }
   
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: 530px) {
     .profile__title {
-      margin: 0 10px 14px 0;
+      margin: 0 10px 14px 0px;
       max-width: 189px;
       font-size: 27px;
       line-height: 33px;
