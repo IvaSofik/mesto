@@ -1,13 +1,21 @@
-const openPopupBtn = document.querySelector('.profile__button-edit_popup_opened');
-const popup = document.querySelector('.popup');
-const closePopupBtn = document.querySelector('.popup__close-button');
+let popup = document.querySelector('.popup');
+let openPopupBtn = document.querySelector('.profile__button-edit');
+let closePopupBtn = document.querySelector('.popup__close-button');
+let formElement = document.querySelector('.popup__form-element');
+let nameInput = document.querySelector('.popup__input_type_name');
+let jobInput = document.querySelector('.popup__input_type_job');
+let nameProfile = document.querySelector('.profile__title');
+let jobProfile = document.querySelector('.profile__subtitle');
+
 
 function openPopup(){
     popup.classList.add('popup_opened');
+    nameInput.value = nameProfile.textContent;
+    jobInput.value = jobProfile.textContent;
 }
 
 function closePopup(evt){
-    const isOverlay = evt.target.classList.contains('popup'); //проверка (true - на оверлей, false - на ост поля)
+    const isOverlay = evt.target.classList.contains('popup'); //проверка (true - нажали на оверлей, false - на ост поля)
     const isCloseBtn = evt.target.classList.contains('popup__close-button'); //проверка (true - на кнопку закрытия, false - на ост поля)
     const isSubmitBtn = evt.target.classList.contains('popup__save-button');
     //console.log(isCloseBtn);
@@ -20,30 +28,11 @@ function closePopup(evt){
 openPopupBtn.addEventListener('click', openPopup);
 popup.addEventListener('click', closePopup);
 
-//функция редактирования данных (имя и описание)
-const nameInput = document.querySelector('.popup__input_name');
-const descInput = document.querySelector('.popup__input_description');
-const nameProfile = document.querySelector('.profile__title');
-const descProfile = document.querySelector('.profile__subtitle');
-const inputSet = document.querySelector('.popup__set');
-
-//nameInput.value = nameProfile.textContent;
-//descInput.value = descProfile.textContent;
-
 function handleFormSubmit(evt) {
-    evt.preventDefault();
+    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
     nameProfile.textContent = nameInput.value;
-    descProfile.textContent = descInput.value;
+    jobProfile.textContent = jobInput.value;
     closePopup();
 }
 
-
-openPopupBtn.addEventListener('click', openPopup);
-popup.addEventListener('click', closePopup); 
-inputSet.addEventListener('submit', handleFormSubmit);
-
-
-
-
-
-
+formElement.addEventListener('submit', handleFormSubmit);

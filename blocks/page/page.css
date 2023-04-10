@@ -1,8 +1,25 @@
-page {
-    margin: 0;
-    width: 100%;
-    max-width: 1280px;
+.page {
+  margin: 0 auto;
+  max-width: 880px;
+  justify-content: center;
+
   }
 
 
+  @media screen and (max-width: 940px) {
+    .page {
+      margin: 0 100px;
+      justify-content: center;
+      
+    }
+  }
+
+
+  @media screen and (max-width: 440px) {
+    .page {
+      margin: 0 auto;
+      max-width: 282px;
+      
+    }
+  }
 
