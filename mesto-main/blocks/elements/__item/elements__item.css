@@ -1,0 +1,4 @@
+.elements__item {
+    max-width: 282px;
+    transition: all 0.7s ease-in-out;
+  }
