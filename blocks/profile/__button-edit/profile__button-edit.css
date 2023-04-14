@@ -1,14 +1,17 @@
 .profile__button-edit{
-    background-image: url(../../../images/Edit\ Button.svg);
-    background-size: contain;
+    background-image: url(../../../images/Pencil_Edit_Btn.svg);
+    /*background-size: contain;*/
+    background-position: center;
     background-repeat: no-repeat;
     background-color: transparent;
     min-width: 24px;
     min-height: 24px;
+    
     transition: 0.5s ease-in-out;
     border: 1px solid #FFF;
     outline: none;
-    align-self: flex-end;
+    align-self: center;
+    box-sizing: border-box;
 }
 
 .profile__button-edit:hover {
@@ -22,4 +25,10 @@
       min-width: 18px;
       min-height: 18px;
     }
+}
+
+@media screen and (max-width: 720px) {
+  .profile__button-edit {
+    margin-bottom: 0;
+  }
 }

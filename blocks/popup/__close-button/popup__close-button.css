@@ -21,3 +21,13 @@
     opacity: 1;
 }
 
+@media screen and (max-width: 730px) {
+    .popup__close-button {
+        min-width: 20px;
+        min-height: 20px;
+        top: -26px;
+        right: 0px;
+  }
+  }
+
+

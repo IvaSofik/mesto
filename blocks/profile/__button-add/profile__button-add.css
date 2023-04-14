@@ -7,8 +7,9 @@
     background-color: transparent;
     border: 2px solid #fff;
     align-items: baseline;
-    background-image: url(../../../images/Add\ Button.png);
+    background-image: url(../../../images/Plus_Add_Btn.svg);
     background-repeat: no-repeat;
+    background-position: center;
     transition: 0.5s ease-in-out;
     outline: none;
     border-radius: 2px;
@@ -19,25 +20,26 @@
     opacity: 0.6;
   }
   
-  @media screen and (max-width: 1100px) {
-    .profile__button-add {
-      margin-left: 90px;
-    }
-  }
   
   @media screen and (max-width: 940px) {
     .profile__button-add {
-      margin-left: 70px;
       margin: 0;
       justify-content: center;
+      min-width: 100px;
+      min-height: 50px;
     }
   }
 
-  
+  @media screen and (max-width: 790px) {
+    .profile__button-add {
+      min-width: 50px;
+      min-height: 50px;
+    }
+  }
 
   @media screen and (max-width: 730px) {
     .profile__button-add {
-      max-width: 282px;
-      margin-left: 30px;
+      min-width: 282px;
+      min-height: 50px;
     }
   }

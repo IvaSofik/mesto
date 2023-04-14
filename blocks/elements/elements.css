@@ -6,19 +6,22 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, 282px);
     gap: 20px 17px;
-    
+    justify-content: center;
   }
   
   @media screen and (max-width: 829px) {
-    .cards {
+    .elements {
       max-width: 400px;
-      justify-content: center;
+      justify-content: flex-end;
+      
     }
   }
   
-  @media screen and (max-width: 644px) {
-    .cards {
-      margin: 0 auto 48px auto;
+  
+
+  @media screen and (max-width: 730px) {
+    .elements {
+      margin: 0 0 48px 0;
       max-width: 282px;
     }
   }

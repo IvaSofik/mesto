@@ -11,9 +11,5 @@
     color: #000000;
     background-color: rgba(0, 0, 0, 0.5);
     transition: visibility 0s, opacity .2s linear;
-    
 }
 
-.popup:before{
-    opacity: 0.7;
-}
