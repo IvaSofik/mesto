@@ -33,13 +33,13 @@
   @media screen and (max-width: 790px) {
     .profile__button-add {
       min-width: 50px;
-      min-height: 50px;
+      min-height: 40px;
     }
   }
 
   @media screen and (max-width: 730px) {
     .profile__button-add {
       min-width: 282px;
-      min-height: 50px;
+     
     }
   }
