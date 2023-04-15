@@ -1,0 +1,12 @@
+.profile__info{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+@media screen and (max-width: 730px) {
+    .profile__info {
+        margin-top: 12px; /*по PixelPerfect и на макете расстояние между аватаром и именем 22.25px. я поменяла с 22px на 12px после 2го замечания на ревью "На 320px большое расстояние между profile__avatar и profile__title" */
+    }
+}
