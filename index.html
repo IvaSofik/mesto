@@ -25,50 +25,7 @@
                     <button class="profile__button-add" type="button" title="Добавить фото"></button>
                 </section>
 
-                <section class="elements">
-                    <article class="elements__item">
-                        <img src="./images/Dombay.jpg" class="elements__image" alt="Домбай">
-                        <div class="elements__info">
-                            <h2 class="elements__title">Домбай</h2>
-                            <button type="button" class="elements__like" aria-label="Like"></button>
-                        </div>
-                    </article>
-                    <article class="elements__item">
-                        <img src="./images/Karachaevsk.jpg" class="elements__image" alt="Карачаевск">
-                        <div class="elements__info">
-                            <h2 class="elements__title">Карачаевск</h2>
-                            <button type="button" class="elements__like" aria-label="Like"></button>
-                        </div>
-                    </article>
-                    <article class="elements__item">
-                        <img src="./images/Gora_Elbrus.jpg" class="elements__image" alt="Гора_Эльбрус">
-                        <div class="elements__info">
-                            <h2 class="elements__title">Гора Эльбрус</h2>
-                            <button type="button" class="elements__like" aria-label="Like"></button>
-                        </div>
-                    </article>
-                    <article class="elements__item">
-                        <img src="./images/Dombay.jpg" class="elements__image" alt="Домбай">
-                        <div class="elements__info">
-                            <h2 class="elements__title">Домбай</h2>
-                            <button type="button" class="elements__like" aria-label="Like"></button>
-                        </div>
-                    </article>
-                    <article class="elements__item">
-                        <img src="./images/Karachaevsk.jpg" class="elements__image" alt="Карачаевск">
-                        <div class="elements__info">
-                            <h2 class="elements__title">Карачаевск</h2>
-                            <button type="button" class="elements__like" aria-label="Like"></button>
-                        </div>
-                    </article>
-                    <article class="elements__item">
-                        <img src="./images/Gora_Elbrus.jpg" class="elements__image" alt="Гора_Эльбрус">
-                        <div class="elements__info">
-                            <h2 class="elements__title">Гора Эльбрус</h2>
-                            <button type="button" class="elements__like" aria-label="Like"></button>
-                        </div>
-                    </article>
-                </section>
+                <section class="elements"></section>
             </main>
 
             <footer class="footer">
@@ -76,7 +33,8 @@
             </footer>
         </div>
 
-        <div class="popup">
+        <!-- Попап редактирования профиля-->
+        <section class="popup popup_type_edit-userinfo">
             <div class="popup__container">
                 <button class="popup__close-button" type="button" title="Закрыть"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
@@ -85,10 +43,89 @@
                     <input class="popup__input popup__input_type_job" id="Userinformation" type="text" name="job" placeholder="О себе" minlength="2" maxlength="200" required>
                     <button class="popup__save-button" type="submit" title="Сохранить">Сохранить</button>
                 </form>
-                
             </div>
-        </div>
+        </section>
 
-        <script src="./scripts/index.js"></script>
+        <!-- Попап добавления эелементов-->
+        <section class="popup popup_type_add-elements">
+            <div class="popup__container">
+                <button class="popup__close-button" type="button" title="Закрыть"></button>
+                <h2 class="popup__title">Новое место</h2>
+                <form class="popup__form-element" name="editForm">
+                    <input class="popup__input popup__input_type_photoname" type="text" name="name" placeholder="Название" minlength="2" maxlength="40" required>
+                    <input class="popup__input popup__input_type_photolink" type="text" name="link" placeholder="Ссылка на картинку" minlength="2" maxlength="200" required>
+                    <button type="submit" class="popup__save-button">Создать</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Попап раскрытия фотографии-->
+        <section class="popup popup_type_open-image">
+            <div class="popup__container popup__container_open-image">
+                <button class="popup__close-button" type="button" title="Закрыть"></button>
+                <img class="popup__image-fullscreen" src="#" alt="#">
+                <h2 class="popup__image-title"></h2>
+            </div>
+        </section>
+
+        <!-- Шаблон элементов-->
+        <template class="elements-template">
+            <article class="elements__item">
+                <button type="button" class="elements__delete" aria-label="Delete"></button>
+                <img src="" class="elements__image">
+                <div class="elements__info">
+                    <h2 class="elements__title"></h2>
+                    <button type="button" class="elements__like" aria-label="Like"></button>
+                </div>
+            </article>
+        </template>
+
+        <script type="module" src="./scripts/index.js"></script>
+        <script type="module" src="./scripts/constants.js"></script>
     </body>
 </html>
+
+<!-- 
+<article class="elements__item">
+    <img src="./images/Dombay.jpg" class="elements__image" alt="Домбай">
+    <div class="elements__info">
+        <h2 class="elements__title">Домбай</h2>
+        <button type="button" class="elements__like" aria-label="Like"></button>
+    </div>
+</article>
+<article class="elements__item">
+    <img src="./images/Karachaevsk.jpg" class="elements__image" alt="Карачаевск">
+    <div class="elements__info">
+        <h2 class="elements__title">Карачаевск</h2>
+        <button type="button" class="elements__like" aria-label="Like"></button>
+    </div>
+</article>
+<article class="elements__item">
+    <img src="./images/Gora_Elbrus.jpg" class="elements__image" alt="Гора_Эльбрус">
+    <div class="elements__info">
+        <h2 class="elements__title">Гора Эльбрус</h2>
+        <button type="button" class="elements__like" aria-label="Like"></button>
+    </div>
+</article>
+<article class="elements__item">
+    <img src="./images/Dombay.jpg" class="elements__image" alt="Домбай">
+    <div class="elements__info">
+        <h2 class="elements__title">Домбай</h2>
+        <button type="button" class="elements__like" aria-label="Like"></button>
+    </div>
+</article>
+<article class="elements__item">
+    <img src="./images/Karachaevsk.jpg" class="elements__image" alt="Карачаевск">
+    <div class="elements__info">
+        <h2 class="elements__title">Карачаевск</h2>
+        <button type="button" class="elements__like" aria-label="Like"></button>
+    </div>
+</article>
+<article class="elements__item">
+    <img src="./images/Gora_Elbrus.jpg" class="elements__image" alt="Гора_Эльбрус">
+    <div class="elements__info">
+        <h2 class="elements__title">Гора Эльбрус</h2>
+        <button type="button" class="elements__like" aria-label="Like"></button>
+    </div>
+</article>
+-->
