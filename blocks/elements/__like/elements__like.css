@@ -15,8 +15,3 @@
     opacity: 0.5;
     transition: 0.5s ease-in-out;
   }
-
-  .elements__like-active{
-    background: url(../../../../images/LikeActiveBlack.svg) no-repeat center;
-  }
-

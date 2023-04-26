@@ -3,14 +3,14 @@ import { initialElements } from "./constants.js"
 const popup = document.querySelector('.popup');
 const openEditPopupBtn = document.querySelector('.profile__button-edit');
 
-const closePopupBtn = document.querySelectorAll('.popup__close-button');
+const closePopupBtns = document.querySelectorAll('.popup__close-button');
 
 const editProfilePopup = document.querySelector('.popup_type_edit-userinfo');
 
 const addNewElementBtn = document.querySelector('.profile__button-add');
 const popupAddNewElement = document.querySelector('.popup_type_add-elements');
 
-const formElement = document.querySelector('.popup__form-element');
+const formElement = editProfilePopup.querySelector('.popup__form-element');
 
 const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_job');
@@ -22,13 +22,13 @@ const addImageTitle = document.querySelector('.popup__input_type_photoname');
 
 const addImageLink = document.querySelector('.popup__input_type_photolink');
 
-const addImageForm = document.querySelector('.popup__form-element');
+const addImageForm = popupAddNewElement.querySelector('.popup__form-element');
 
 const imageOpenPicture = document.querySelector('.popup__image');
 const imageOpenTitle = document.querySelector(".popup__image-title");
 const submitImageBtn = document.querySelector('.popup__save-button');
 
-const elementsTemplate = document.querySelector('.elements-template');
+const elementTemplate = document.querySelector('.elements-template');
 const elementsContainer = document.querySelector('.elements');
 
 const zoomPopup = document.querySelector('.popup_type_open-image');
@@ -47,7 +47,7 @@ function closePopup(popup) {
   }
 
 // Закрытие всех попапов
-  closePopupBtn.forEach((element) => {
+  closePopupBtns.forEach((element) => {
     const popupClose = element.closest('.popup');
     element.addEventListener('click', () => {
       closePopup(popupClose)
@@ -62,50 +62,50 @@ function closePopup(popup) {
     openPopup(editProfilePopup);
   });
 
-function handleFormSubmit(evt) { 
+function formProfileSubmit(evt) { 
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы. 
     nameProfile.textContent = nameInput.value; 
     jobProfile.textContent = jobInput.value; 
     closePopup(editProfilePopup);
 } 
 
-openEditPopupBtn.addEventListener('click', openPopup); 
-//closePopupBtn.addEventListener('click', closePopup);
-formElement.addEventListener('submit', handleFormSubmit);
+//openEditPopupBtn.addEventListener('click', openPopup); 
+//closePopupBtns.addEventListener('click', closePopup);
+formElement.addEventListener('submit', formProfileSubmit);
 
 
 //  Создание и удаление элементов(карточек) + увеличение фото
-const createElementsItem = (ElementsData) => {
-    const clonedElements = elementsTemplate.content.querySelector('.elements__item').cloneNode(true);
-    const elementsImage = clonedElements.querySelector('.elements__image');
-    const elementsTitle = clonedElements.querySelector('.elements__title');
-    const elementsDeleteButton = clonedElements.querySelector('.elements__delete');
-    const elementsLikeButton = clonedElements.querySelector('.elements__like');
-    elementsImage.src = ElementsData.link;
-    elementsImage.alt = ElementsData.name;
-    clonedElements.querySelector('.elements__title').textContent = ElementsData.name;
+const createElementsItem = (elementData) => {
+    const clonedElement = elementTemplate.content.querySelector('.elements__item').cloneNode(true);
+    const elementsImage = clonedElement.querySelector('.elements__image');
+    const elementsTitle = clonedElement.querySelector('.elements__title');
+    const elementsDeleteButton = clonedElement.querySelector('.elements__delete');
+    const elementsLikeButton = clonedElement.querySelector('.elements__like');
+    elementsImage.src = elementData.link;
+    elementsImage.alt = elementData.name;
+    clonedElement.querySelector('.elements__title').textContent = elementData.name;
 
-    elementsTitle.textContent = ElementsData.name;
+    elementsTitle.textContent = elementData.name;
 
     elementsImage.addEventListener('click', () => {
-        imageZoomPopup.src = ElementsData.link;
-        imageZoomPopup.alt = ElementsData.name;
-        titleZoomPopup.textContent =  ElementsData.name;
+        imageZoomPopup.src = elementData.link;
+        imageZoomPopup.alt = elementData.name;
+        titleZoomPopup.textContent =  elementData.name;
         openPopup(zoomPopup);
     });
 
     const handleLike = () => {
-        elementsLikeButton.classList.toggle('elements__like');
+        elementsLikeButton.classList.toggle('elements__like_active');
     };
     const handleDelete = () => {
-        clonedElements.remove();
+        clonedElement.remove();
     };
 
     elementsDeleteButton.addEventListener('click', handleDelete);
     elementsLikeButton.addEventListener('click', handleLike);
     elementsImage.addEventListener('click', () => openPopup(zoomPopup));
 
-    return clonedElements;
+    return clonedElement;
 };
 
 function renderElement (item) {
@@ -127,7 +127,8 @@ addNewElementBtn.addEventListener('click', () => {
     const infoPopupAddNewElement = {
         name: addImageTitle.value, 
         link: addImageLink.value};
-    elementsContainer.prepend(createElementsItem(infoPopupAddNewElement));
+        renderElement(createElementsItem(infoPopupAddNewElement));
     closePopup(popupAddNewElement);
     evt.target.reset();
   });
+  
