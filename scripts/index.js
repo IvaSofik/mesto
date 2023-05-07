@@ -10,7 +10,10 @@ const editProfilePopup = document.querySelector('.popup_type_edit-userinfo');
 const addNewElementBtn = document.querySelector('.profile__button-add');
 const popupAddNewElement = document.querySelector('.popup_type_add-elements');
 
-const formElement = editProfilePopup.querySelector('.popup__form-element');
+const editProfileFormElement = editProfilePopup.querySelector('.popup__form-element');
+//const formEdit = document.querySelector(".popup__form-element_edit");
+const formAdd = document.querySelector(".popup__form-element_add");
+
 
 const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_job');
@@ -23,6 +26,8 @@ const addImageTitle = document.querySelector('.popup__input_type_photoname');
 const addImageLink = document.querySelector('.popup__input_type_photolink');
 
 const addImageForm = popupAddNewElement.querySelector('.popup__form-element');
+const buttonElementsSubmit = document.querySelector('.popup__save-button_elements');
+const buttonProfileSubmit = document.querySelector('.popup__save-button_profile');
 
 const imageOpenPicture = document.querySelector('.popup__image');
 const imageOpenTitle = document.querySelector(".popup__image-title");
@@ -35,16 +40,33 @@ const zoomPopup = document.querySelector('.popup_type_open-image');
 const imageZoomPopup = document.querySelector('.popup__image-fullscreen');
 const titleZoomPopup = document.querySelector('.popup__image-title');
 
+  // Закрытие на Esc
+  function closePopupEsc(evt) {
+    if (evt.key === 'Escape') {
+      const popupOpen = document.querySelector('.popup_opened');
+      closePopup(popupOpen);
+    }
+  };
+
+  // Функция закрытия попапа на оверлей
+function closePopupOverlay(event) {
+  if (event.target === event.currentTarget) {
+    closePopup(event.target);
+  };
+};
 
 
 //Функции открытия и закрытия попапа
 function openPopup(popup) {
     popup.classList.add('popup_opened');
+    popup.addEventListener('click', closePopupOverlay);
+    document.addEventListener('keydown', closePopupEsc);
 } 
 
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
   }
+  
 
 // Закрытие всех попапов
   closePopupBtns.forEach((element) => {
@@ -54,15 +76,8 @@ function closePopup(popup) {
     });
   });
 
-//Попап "Редактировать профиль"
-
-  openEditPopupBtn.addEventListener('click', () => {
-    nameInput.value = nameProfile.textContent;
-    jobInput.value = jobProfile.textContent;
-    openPopup(editProfilePopup);
-  });
-
-function formProfileSubmit(evt) { 
+ 
+function handleFormProfileSubmit(evt) { 
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы. 
     nameProfile.textContent = nameInput.value; 
     jobProfile.textContent = jobInput.value; 
@@ -71,7 +86,10 @@ function formProfileSubmit(evt) {
 
 //openEditPopupBtn.addEventListener('click', openPopup); 
 //closePopupBtns.addEventListener('click', closePopup);
-formElement.addEventListener('submit', formProfileSubmit);
+editProfileFormElement.addEventListener('submit', handleFormProfileSubmit);
+//formAdd.addEventListener("submit", addImageForm);
+//editProfileFormElement.addEventListener("submit", addImageForm);
+
 
 
 //  Создание и удаление элементов(карточек) + увеличение фото
@@ -117,8 +135,10 @@ initialElements.forEach((element) => {
 });
 
 
+
 // Добавление новых элементов
 addNewElementBtn.addEventListener('click', () => {
+    //openElementPopup(popupAddNewElement); // ломает добавление карточек
     openPopup(popupAddNewElement);
   });
   
@@ -131,4 +151,18 @@ addNewElementBtn.addEventListener('click', () => {
     closePopup(popupAddNewElement);
     evt.target.reset();
   });
-  
+
+
+  function openElementPopup() { //
+    buttonElementsSubmit.classList.add('.popup__save-button_disable');
+    buttonElementsSubmit.setAttribute('disabled', true);
+  };
+
+  //Попап "Редактировать профиль" 
+  openEditPopupBtn.addEventListener('click', () => {
+    buttonProfileSubmit.classList.remove('popup__save-button_disable'); //
+    buttonProfileSubmit.removeAttribute('disabled');                    //
+    nameInput.value = nameProfile.textContent;
+    jobInput.value = jobProfile.textContent;
+    openPopup(editProfilePopup);
+  });

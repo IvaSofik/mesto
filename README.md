@@ -15,22 +15,29 @@
 
 * [Ссылка на макет в Figma - ПР4](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
 * [Ссылка на макет в Figma - ПР5](https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5)
+* [Ссылка на макет в Figma - ПР6](https://www.figma.com/file/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6)
 
 Используемые технологии:
 
 Адаптивная верстка сайта для разных устройств;
 Flex-box;
 Grid Layout
+Медиазапросы
+БЭМ Nested;
+Form validation
 CSS3
 HTML5
-JavaScript
-БЭМ Nested;
+JavaScript:
+    * открытие Формы редактирования профиля
+    * закрытие Формы редактирования профиля (на крестик, на оверлей, на Escape)
+    * изменение и сохранениие данных профиля
+    * добавление и удаление новых карточек
+    * просмотра карточки
+    * нажатие лайка
 
+    
 Планируемые улучшения:
 
-Доработка проекта по дальнейшему ТЗ (Добавление фотографий, инфо о лайках итд.)
+Доработка проекта по дальнейшему ТЗ (Изменение карточек, личного фото, др. элементов)
 
 Ссылка на проект: https://ivasofik.github.io/mesto/
-
-
-
