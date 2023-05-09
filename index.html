@@ -33,35 +33,35 @@
             </footer>
         </div>
 
-        <!-- Попап редактирования профиля-->
-        <section class="popup popup_type_edit-userinfo">
-            <div class="popup__container">
-                <button class="popup__close-button" type="button" title="Закрыть"></button>
-                <h2 class="popup__title">Редактировать профиль</h2>
-                <form class="popup__form-element popup__form-element_edit" name="editForm" novalidate>
-                    <input class="popup__input popup__input_type_name" id="username" type="text" name="name" placeholder="Имя" minlength="2" maxlength="40" required>
-                    <span id="error-name" class="popup__error">123</span>
-                    <input class="popup__input popup__input_type_job" id="Userinformation" type="text" name="job" placeholder="О себе" minlength="2" maxlength="200" required>
-                    <span class="popup__error" id="error-job">456</span>
-                    <button class="popup__save-button popup__save-button_profile" type="submit" title="Сохранить">Сохранить</button>
-                </form>
-            </div>
-        </section>
+ <!-- Попап редактирования профиля-->
+ <section class="popup popup_type_edit-userinfo">
+    <div class="popup__container">
+        <button class="popup__close-button" type="button" title="Закрыть"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form class="popup__form-element popup__form-element_edit" name="editForm" novalidate>
+            <input class="popup__input popup__input_type_name" id="username" type="text" name="name" placeholder="Имя" minlength="2" maxlength="40" required>
+            <span id="error-username" class="popup__error">123</span>
+            <input class="popup__input popup__input_type_job" id="userinformation" type="text" name="job" placeholder="О себе" minlength="2" maxlength="200" required>
+            <span id="error-userinformation" class="popup__error">456</span>
+            <button class="popup__save-button popup__save-button_profile" type="submit" title="Сохранить">Сохранить</button>
+        </form>
+    </div>
+</section>
 
-        <!-- Попап добавления эелементов-->
-        <section class="popup popup_type_add-elements">
-            <div class="popup__container">
-                <button class="popup__close-button" type="button" title="Закрыть"></button>
-                <h2 class="popup__title">Новое место</h2>
-                <form class="popup__form-element popup__form-element_add" name="addElementsForm" novalidate>
-                    <input class="popup__input popup__input_type_photoname" type="text" name="name" placeholder="Название" minlength="2" maxlength="30" required>
-                    <span class="popup__error" id="error-photoname">987</span>
-                    <input class="popup__input popup__input_type_photolink" type="url" name="link" placeholder="Ссылка на картинку" required>
-                    <span class="popup__error" id="error-photolink">654</span>
-                    <button type="submit" class="popup__save-button popup__save-button_elements">Создать</button>
-                </form>
-            </div>
-        </section>
+<!-- Попап добавления эелементов-->
+<section class="popup popup_type_add-elements">
+    <div class="popup__container">
+        <button class="popup__close-button" type="button" title="Закрыть"></button>
+        <h2 class="popup__title">Новое место</h2>
+        <form class="popup__form-element popup__form-element_add" name="addElementsForm" novalidate>
+            <input class="popup__input popup__input_type_photoname" id="photoname" type="text" name="name" placeholder="Название" minlength="2" maxlength="30" required>
+            <span id="error-photoname" class="popup__error">987</span>
+            <input class="popup__input popup__input_type_photolink" id="photolink" type="url" name="link" placeholder="Ссылка на картинку" required>
+            <span id="error-photolink" class="popup__error">654</span>
+            <button type="submit" class="popup__save-button popup__save-button_elements">Создать</button>
+        </form>
+    </div>
+</section>
 
         <!-- Попап раскрытия фотографии-->
         <section class="popup popup_type_open-image">
@@ -84,8 +84,7 @@
             </article>
         </template>
 
-        <script src="./scripts/validate.js"></script>
+        <script type="module" src="./scripts/validate.js"></script>
         <script type="module" src="./scripts/index.js"></script>
-        <script src="./scripts/validate.js"></script>
     </body>
 </html>
