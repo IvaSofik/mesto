@@ -25,4 +25,15 @@ const initialElements = [
     }
   ]; 
 
+  const validationConfig = ({ 
+    formSelector: '.popup__form-element',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__save-button',
+    inactiveButtonClass: 'popup__save-button_disable',
+    inputErrorClass: 'popup__input_invalid',
+    errorClass: 'popup__error_visible'
+  }); 
+
   export { initialElements };
+  export { validationConfig };
+  //export { enableValidation };
