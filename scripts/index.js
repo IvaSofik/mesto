@@ -1,8 +1,8 @@
 import { initialElements } from "./constants.js";
-//import { validationConfig } from "./constants.js"
-//import { enableValidation } from "./validate.js"
 
-const popup = document.querySelector(".popup");
+import { enableValidation } from "./validate.js"
+import { validationConfig } from "./constants.js"
+
 const openEditPopupBtn = document.querySelector(".profile__button-edit");
 
 const closePopupBtns = document.querySelectorAll(".popup__close-button");
@@ -164,4 +164,4 @@ openEditPopupBtn.addEventListener("click", () => {
     openPopup(editProfilePopup);
 });
 
-//enableValidation(validationConfig);
+enableValidation(validationConfig);

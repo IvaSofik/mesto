@@ -1,4 +1,5 @@
-import { validationConfig } from "./constants.js";
+//import { validationConfig } from "./constants.js";
+export { enableValidation };
 
 //Проверяем все поля в форме
 
@@ -10,21 +11,22 @@ function areAllInputsValid(inputList) {
 
 // Переключение состояний вкл/выкл у submit
 
+
+function enableButton(buttonElement, validationConfig) { 
+  buttonElement.removeAttribute("disabled");
+  buttonElement.classList.remove(validationConfig.inactiveButtonClass);
+} 
+function disableButton(buttonElement, validationConfig) { 
+  buttonElement.setAttribute("disabled", true);
+  buttonElement.classList.add(validationConfig.inactiveButtonClass);
+}
 function toggleButton(validationConfig, inputList, formSelector) {
-    const buttonElement = formSelector.querySelector(validationConfig.submitButtonSelector);
-    function enableButton() {
-        buttonElement.removeAttribute("disabled");
-    }
-    function disableButton() {
-        buttonElement.setAttribute("disabled", true);
-    }
-    if (areAllInputsValid(inputList)) {
-        buttonElement.classList.remove(validationConfig.inactiveButtonClass);
-        enableButton();
-    } else {
-        buttonElement.classList.add(validationConfig.inactiveButtonClass);
-        disableButton();
-    }
+const buttonElement = formSelector.querySelector(validationConfig.submitButtonSelector);
+if (areAllInputsValid(inputList)) { 
+      enableButton(buttonElement, validationConfig); 
+  } else { 
+      disableButton(buttonElement, validationConfig); 
+  } 
 }
 
 // Отображение ошибки валидации
@@ -80,4 +82,4 @@ function enableValidation(validationConfig) {
     });
 }
 
-enableValidation(validationConfig);
+//enableValidation(validationConfig);
