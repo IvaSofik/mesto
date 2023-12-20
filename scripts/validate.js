@@ -9,7 +9,7 @@ function areAllInputsValid(inputList) {
     });
 }
 
-// Переключение состояний вкл/выкл у submit
+// // Переключение состояний вкл/выкл у submit
 
 
 function enableButton(buttonElement, validationConfig) { 
@@ -29,48 +29,48 @@ if (areAllInputsValid(inputList)) {
   } 
 }
 
-// Отображение ошибки валидации
+// // Отображение ошибки валидации
 
-function showInputError(validationConfig, inputElement, inputError) {
-    inputElement.classList.add(validationConfig.inputError);
-    inputError.classList.add(validationConfig.errorClass);
-    inputError.textContent = inputElement.validationMessage;
-}
+// function showInputError(validationConfig, inputElement, inputError) {
+//     inputElement.classList.add(validationConfig.inputError);
+//     inputError.classList.add(validationConfig.errorClass);
+//     inputError.textContent = inputElement.validationMessage;
+// }
 
-// Скрываем ошибки валидации
+// // Скрываем ошибки валидации
 
-function hideInputError(validationConfig, inputElement, inputError) {
-    inputElement.classList.remove(validationConfig.inputError);
-    inputError.classList.remove(validationConfig.errorClass);
-    inputError.textContent = "";
-}
+// function hideInputError(validationConfig, inputElement, inputError) {
+//     inputElement.classList.remove(validationConfig.inputError);
+//     inputError.classList.remove(validationConfig.errorClass);
+//     inputError.textContent = "";
+// }
 
 // Проверка валидности поля
 
-function checkInputValidity(validationConfig, inputElement) {
-    const inputError = document.querySelector(`#error-${inputElement.id}`);
-    if (inputElement.validity.valid) {
-        hideInputError(validationConfig, inputElement, inputError);
-    } else {
-        showInputError(validationConfig, inputElement, inputError);
-    }
-}
+// function checkInputValidity(validationConfig, inputElement) {
+//     const inputError = document.querySelector(`#error-${inputElement.id}`);
+//     if (inputElement.validity.valid) {
+//         hideInputError(validationConfig, inputElement, inputError);
+//     } else {
+//         showInputError(validationConfig, inputElement, inputError);
+//     }
+// }
 
 // Добавляем обработчики на все поля
 
-function setEventListeners(validationConfig, formSelector) {
-    const inputList = Array.from(formSelector.querySelectorAll(validationConfig.inputSelector));
-    //const inputSelector = formSelector.querySelectorAll(validationConfig.inputSelector);
-    //const inputList = Array.from(inputSelector);
+// function setEventListeners(validationConfig, formSelector) {
+//     const inputList = Array.from(formSelector.querySelectorAll(validationConfig.inputSelector));
+//     //const inputSelector = formSelector.querySelectorAll(validationConfig.inputSelector);
+//     //const inputList = Array.from(inputSelector);
 
-    toggleButton(validationConfig, inputList, formSelector);
-    inputList.forEach(function (inputElement) {
-        inputElement.addEventListener("input", () => {
-            checkInputValidity(validationConfig, inputElement);
-            toggleButton(validationConfig, inputList, formSelector);
-        });
-    });
-}
+//     toggleButton(validationConfig, inputList, formSelector);
+//     inputList.forEach(function (inputElement) {
+//         inputElement.addEventListener("input", () => {
+//             checkInputValidity(validationConfig, inputElement);
+//             toggleButton(validationConfig, inputList, formSelector);
+//         });
+//     });
+// }
 
 function enableValidation(validationConfig) {
     const formList = Array.from(document.querySelectorAll(validationConfig.formSelector));

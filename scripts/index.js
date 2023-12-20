@@ -1,3 +1,5 @@
+//import "./pages/index.css";
+
 import { initialElements } from "./constants.js";
 
 import { enableValidation } from "./validate.js"
@@ -151,8 +153,8 @@ addImageForm.addEventListener("submit", (evt) => {
 
 function disableElementPopupSubmitButton() {
     //
-    buttonElementsSubmit.classList.add("popup__save-button_disable");
-    buttonElementsSubmit.setAttribute("disabled", true);
+    //buttonElementsSubmit.classList.add("popup__save-button_disable");
+    //buttonElementsSubmit.setAttribute("disabled", true);
 }
 
 //Попап "Редактировать профиль"
@@ -165,3 +167,11 @@ openEditPopupBtn.addEventListener("click", () => {
 });
 
 enableValidation(validationConfig);
+
+const numbers = [2, 3, 5];
+
+// Стрелочная функция. Не запнётся ли на ней Internet Explorer?
+const doubledNumbers = numbers.map(number => number * 2);
+
+console.log(doubledNumbers); // 4, 6, 10 
+
